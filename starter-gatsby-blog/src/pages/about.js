@@ -43,7 +43,6 @@ export const pageQuery = graphql`
       sys {
         id
       }
-      # add the fields you want to query
     }
   }
 }
