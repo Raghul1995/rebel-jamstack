@@ -4,13 +4,10 @@ import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import styles from './blog.module.css'
 import Layout from '../components/layout'
-import ArticlePreview from '../components/article-preview'
 
 class AboutIndex extends React.Component {
   render() {
     const siteTitle = 'Rebels'
-    // const posts = get(this, 'props.data.allContentfulBlogPost.edges')
-
     return (
       <Layout location={this.props.location}>
         <div style={{ background: '#fff' }}>
@@ -35,15 +32,3 @@ class AboutIndex extends React.Component {
 }
 
 export default AboutIndex
-
-export const pageQuery = graphql`
-  query personCollectionQuery {
-  personCollection {
-    items {
-      sys {
-        id
-      }
-    }
-  }
-}
-`
