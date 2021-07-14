@@ -6,7 +6,7 @@ import styles from './blog.module.css'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 
-class BlogIndex extends React.Component {
+class AboutIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
@@ -34,7 +34,7 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex
+export default AboutIndex
 
 export const pageQuery = graphql`
   query BlogIndexQuery {
