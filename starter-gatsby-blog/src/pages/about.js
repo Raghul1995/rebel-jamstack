@@ -4,6 +4,7 @@ import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import styles from './blog.module.css'
 import Layout from '../components/layout'
+import Img from 'gatsby-image'
 
 // http://localhost:8000/___graphql
 
@@ -20,9 +21,10 @@ class AboutIndex extends React.Component {
           <div className="wrapper">
             <h2 className="section-headline">Recent articles</h2>
             <ul className="article-list">
-              {people.map(({ node }) => {
+              {people.filter(({node}) => !!node.image).map(({ node }) => {
                 return (
                   <li key={node.id}>
+                    <Img alt="" fluid={node.image.fluid} />
                     <h2>{node.name}</h2>
                   </li>
                 )
@@ -46,6 +48,11 @@ query PersonIndexQuery {
         name
         shortBio {
           shortBio
+        }
+        image {
+          fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+            ...GatsbyContentfulFluid_tracedSVG
+          }
         }
       }
     }
