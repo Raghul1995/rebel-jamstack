@@ -38,7 +38,7 @@ class AboutIndex extends React.Component {
 export default AboutIndex
 
 export const pageQuery = graphql`
-query MyQuery {
+query PersonIndexQuery {
   allContentfulPerson {
     edges {
       node {
