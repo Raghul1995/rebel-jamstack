@@ -9,7 +9,7 @@ import Layout from '../components/layout'
 
 class AboutIndex extends React.Component {
   render() {
-    const siteTitle = 'Rebels'
+    const siteTitle = get(this, 'props.data.site.siteMetadata.title');
     const people = get(this, 'props.data.allContentfulPerson.edges')
 
     return (
@@ -46,6 +46,11 @@ query PersonIndexQuery {
         name
         shortBio {
           shortBio
+        }
+        image {
+          fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+            ...GatsbyContentfulFluid_tracedSVG
+          }
         }
       }
     }
