@@ -15,7 +15,7 @@ class AboutIndex extends React.Component {
 
     return (
       <Layout location={this.props.location}>
-        <div style={{ background: '#fff' }}>
+        <div style={{ background: '#bbb' }}>
           <Helmet title={siteTitle} />
           <div className={styles.hero}>About</div>
           <div className="wrapper">
